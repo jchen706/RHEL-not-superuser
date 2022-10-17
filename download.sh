@@ -30,7 +30,7 @@ install_pkg() {
     which yumdownloader > /dev/null 2>&1 0>&1 || install_yumdownloader
     local tmp_dir="$(mktemp -d)"
     echo "[*] Resolving packages for $1..."
-    export PATH=/nethome/jchen706/prefix/usr/bin:$PATH
+    export PATH=$HOME/prefix/usr/bin:$PATH
     yumdownloader --destdir "$tmp_dir" --resolve "$1"
     
     if [ "$?" -eq "0" ]; then
